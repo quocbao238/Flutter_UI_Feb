@@ -143,11 +143,12 @@ class _B_TravelAppState extends State<B_TravelApp> {
                     height: 32.0,
                     width: 32.0,
                     decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                          image: NetworkImage(_profileImage),
-                          fit: BoxFit.cover,
-                        )),
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                        image: NetworkImage(_profileImage),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                   )
                 ],
               ),
