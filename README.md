@@ -24,7 +24,7 @@ Flutter UI Design February
 
 <img src="https://raw.githubusercontent.com/baobon/Flutter_UI_Feb/master/assets/2302/screenshot/shot3.png" width="400"/> <img src="https://raw.githubusercontent.com/baobon/Flutter_UI_Feb/master/assets/2302/screenshot/shot4.png" width="400"/> 
 
-## 23/02/2020 -> Smart Home 
+## 24/02/2020 -> Smart Home 
 
 - Link: https://dribbble.com/shots/5817859-Smart-Home-Concept
 
