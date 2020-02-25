@@ -26,6 +26,9 @@ dependencies:
   font_awesome_flutter: ^8.7.0
   dots_indicator: ^1.0.0
   flutter_sparkline: ^0.1.0
+  custom_switch: ^0.0.1
+
+
 
 dev_dependencies:
   flutter_test:
@@ -55,6 +58,21 @@ flutter:
    - assets/2102/tokyo3.jpg
    - assets/2102/tokyo4.jpg
    - assets/2102/tokyo5.jpg
+
+   #2402
+   - assets/2402/airconditioner.png
+   - assets/2402/humidity.png
+   - assets/2402/lamp.png
+   - assets/2402/light.png
+   - assets/2402/temp.png
+   - assets/2402/fan.png
+   - assets/2402/back1.jpg
+   - assets/2402/back2.jpg
+   - assets/2402/back3.jpg
+   - assets/2402/back4.jpg
+   
+
+  #  assets/2402/$urlIcon
    
    
 
