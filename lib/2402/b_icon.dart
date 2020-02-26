@@ -12,7 +12,7 @@ class IconCustom extends StatelessWidget {
       icon: Container(
         child: Image(
           image: AssetImage(
-            'assets/2402/$urlIcon',
+            '${urlIcon}',
           ),
           fit: BoxFit.cover,
           color: color,

@@ -10,6 +10,7 @@ class B_Financing extends StatefulWidget {
 }
 
 class _B_FinancingState extends State<B_Financing> {
+  
   /* List Widget */
   List<Widget> pages;
 

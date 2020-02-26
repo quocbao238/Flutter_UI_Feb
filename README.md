@@ -34,6 +34,16 @@ Flutter UI Design February
 
 <img src="https://raw.githubusercontent.com/baobon/Flutter_UI_Feb/master/assets/2402/screenshot/screen3.png" width="400"/> <img src="https://raw.githubusercontent.com/baobon/Flutter_UI_Feb/master/assets/2402/screenshot/screen4.png" width="400"/> 
 
+## 25/02/2020 -> Mindfulness App Concept
+
+- Link: https://dribbble.com/shots/10423413-Mindfulness-App-Concept
+
+### Screenshots
+
+<img src="https://raw.githubusercontent.com/baobon/Flutter_UI_Feb/master/assets/2502/screenshot/screen1.png" width="400"/> <img src="https://raw.githubusercontent.com/baobon/Flutter_UI_Feb/master/assets/2502/screenshot/screen2.png" width="400"/> 
+
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

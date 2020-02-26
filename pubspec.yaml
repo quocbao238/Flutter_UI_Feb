@@ -71,8 +71,14 @@ flutter:
    - assets/2402/back3.jpg
    - assets/2402/back4.jpg
    
+   #2502
+   - assets/2502/back1.jpg
+   - assets/2502/back2.jpg
+   - assets/2502/zenicon.png
+   - assets/2502/moonicon.png
+   - assets/2502/morningicon.png
+   
 
-  #  assets/2402/$urlIcon
    
    
 
