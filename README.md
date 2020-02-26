@@ -40,7 +40,7 @@ Flutter UI Design February
 
 ### Screenshots
 
-<img src="https://raw.githubusercontent.com/baobon/Flutter_UI_Feb/master/assets/2502/screenshot/screen1.png" width="400"/> <img src="https://raw.githubusercontent.com/baobon/Flutter_UI_Feb/master/assets/2502/screenshot/screen2.png" width="400"/> 
+<img src="https://raw.githubusercontent.com/baobon/Flutter_UI_Feb/master/assets/2502/screen1.png" width="400"/> <img src="https://raw.githubusercontent.com/baobon/Flutter_UI_Feb/master/assets/2502/screen2.png" width="400"/> 
 
 
 
