@@ -27,6 +27,12 @@ dependencies:
   dots_indicator: ^1.0.0
   flutter_sparkline: ^0.1.0
   custom_switch: ^0.0.1
+  rounded_floating_app_bar: ^0.1.0
+
+  # 28/02/2020
+  circular_check_box: ^1.0.1
+
+
 
 
 
