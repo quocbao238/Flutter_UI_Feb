@@ -42,13 +42,13 @@ Flutter UI Design February
 
 <img src="https://raw.githubusercontent.com/baobon/Flutter_UI_Feb/master/assets/2502/screen1.png" width="400"/> <img src="https://raw.githubusercontent.com/baobon/Flutter_UI_Feb/master/assets/2502/screen2.png" width="400"/> 
 
-## 28/02/2020 - 2/03/2020 -> Mindfulness App Concept
+## 28/02/2020 - 2/03/2020 -> BookingApp
 
-- Clone booking.com app !!!
+- Clone UI Booking.com app !!!
 
 ### Screenshots
 
-<img src="https://raw.githubusercontent.com/baobon/Flutter_UI_Feb/master/assets/2802/screen1.png" width="300"/> <img src="https://raw.githubusercontent.com/baobon/Flutter_UI_Feb/master/assets/2802/screen2.png" width="300"> <img src="https://raw.githubusercontent.com/baobon/Flutter_UI_Feb/master/assets/2802/screen3.png" width="300"/>  
+<img src="https://raw.githubusercontent.com/baobon/Flutter_UI_Feb/master/assets/2802/screen1.png" width="250"/> <img src="https://raw.githubusercontent.com/baobon/Flutter_UI_Feb/master/assets/2802/screen2.png" width="250"> <img src="https://raw.githubusercontent.com/baobon/Flutter_UI_Feb/master/assets/2802/screen3.png" width="250"/>  
 
 ## Getting Started
 
