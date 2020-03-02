@@ -48,7 +48,8 @@ Flutter UI Design February
 
 ### Screenshots
 
-<img src="https://raw.githubusercontent.com/baobon/Flutter_UI_Feb/master/assets/2802/screen1.png" width="250"/> <img src="https://raw.githubusercontent.com/baobon/Flutter_UI_Feb/master/assets/2802/screen2.png" width="250"> <img src="https://raw.githubusercontent.com/baobon/Flutter_UI_Feb/master/assets/2802/screen3.png" width="250"/>  
+<img src="https://raw.githubusercontent.com/baobon/Flutter_UI_Feb/master/assets/2802/screen1.png" width="260"/> <img src="https://raw.githubusercontent.com/baobon/Flutter_UI_Feb/master/assets/2802/screen2.png" width="260"> <img src="https://raw.githubusercontent.com/baobon/Flutter_UI_Feb/master/assets/2802/screen3.png" width="260"/> 
+<img src="https://raw.githubusercontent.com/baobon/Flutter_UI_Feb/master/assets/2802/screen4.png" width="260"/> <img src="https://raw.githubusercontent.com/baobon/Flutter_UI_Feb/master/assets/2802/screen5.png" width="260"> <img src="https://raw.githubusercontent.com/baobon/Flutter_UI_Feb/master/assets/2802/screen6.png" width="260"/> 
 
 ## Getting Started
 
