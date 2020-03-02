@@ -49,8 +49,7 @@ class _SecondTravelPageState extends State<SecondTravelPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: 
-      Stack(
+      body: Stack(
         children: <Widget>[
           Positioned(
             top: -150,
@@ -116,7 +115,8 @@ class _SecondTravelPageState extends State<SecondTravelPage> {
                   //Tittle Scrore
                   Spacer(),
                   Container(
-                    margin: EdgeInsets.only(left: padding, right: padding,top: padding),
+                    margin: EdgeInsets.only(
+                        left: padding, right: padding, top: padding),
                     height: 130.0,
                     width: MediaQuery.of(context).size.width,
                     child: Row(
@@ -244,8 +244,7 @@ class _SecondTravelPageState extends State<SecondTravelPage> {
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(radius),
                                   image: DecorationImage(
-                                      image:
-                                          AssetImage(japan[index].image),
+                                      image: AssetImage(japan[index].image),
                                       // travels[widget.index].image),
                                       fit: BoxFit.fill),
                                 ),

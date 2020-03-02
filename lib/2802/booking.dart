@@ -4,6 +4,8 @@ import 'package:flutter_feb/2302/mybottom_tab.dart';
 import 'package:flutter_feb/2802/booking_bottom.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'morelist.dart';
+
 class BookingApp extends StatefulWidget {
   @override
   _BookingAppState createState() => _BookingAppState();
@@ -38,14 +40,14 @@ class _BookingAppState extends State<BookingApp> {
 
   /* Funtion */
   //Bottom tab index
-  int currentIndex = 1;
+  int currentIndex = 3;
   int currentService = 0;
 
   /* Funtion */
   void _onPressService(int num) {
     setState(() {
       currentService = num;
-      print("currentService ${currentService}");
+      currentService == 0 ? print("Acccommondation") : print("Car rental");
     });
   }
 
@@ -53,7 +55,10 @@ class _BookingAppState extends State<BookingApp> {
   void _onPress(int num) {
     setState(() {
       currentIndex = num;
-      print("currentIndex ${currentIndex}");
+      currentIndex == 0 ? print("Search Page") : null;
+      currentIndex == 1 ? print("Bookings Page") : null;
+      currentIndex == 2 ? print("SignIn Page") : null;
+      currentIndex == 3 ? print("More Page") : null;
     });
   }
 
@@ -64,10 +69,24 @@ class _BookingAppState extends State<BookingApp> {
     _definePages();
 
     return new Scaffold(
-      backgroundColor: colorBackground,
+      backgroundColor: currentIndex != 2 ? colorBackground : null,
       resizeToAvoidBottomPadding: false,
       body: Stack(
         children: <Widget>[
+          //Background 3
+          currentIndex == 2
+              ? Positioned(
+                  top: -150,
+                  left: -150,
+                  right: -150,
+                  bottom: -150,
+                  child: Image.asset(
+                    'assets/2802/signin.jpg',
+                    fit: BoxFit.fill,
+                  ),
+                )
+              : Container(),
+
           // Body
           Positioned.fill(
             child: Column(
@@ -111,10 +130,12 @@ class _BookingAppState extends State<BookingApp> {
 
                               //Icon
                               Spacer(),
-                              Icon(
-                                FontAwesomeIcons.bell,
-                                color: Colors.white,
-                              ),
+                              currentIndex != 2
+                                  ? Icon(
+                                      FontAwesomeIcons.bell,
+                                      color: Colors.white,
+                                    )
+                                  : Container(),
                             ],
                           ),
                           //
@@ -138,7 +159,7 @@ class _BookingAppState extends State<BookingApp> {
               bottom: 0,
               child: Container(
                 height: 44.0,
-                color: colorBottom,
+                color: currentIndex != 2 ? colorBottom : Colors.grey[800],
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   // crossAxisAlignment: CrossAxisAlignment.end,
@@ -190,7 +211,91 @@ class _BookingAppState extends State<BookingApp> {
       scrollDirection: Axis.vertical,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[],
+        children: <Widget>[
+          Container(
+            margin: EdgeInsets.only(top: padding * 2),
+            // height: 40.0,
+            child: Center(
+              child: Text(
+                "More",
+                style: TextStyle(
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(
+                top: padding / 2, right: padding, left: padding),
+            height: _height - padding * 7,
+            // color: Colors.blue,
+            child: ListView.builder(
+              padding: EdgeInsets.all(padding / 2),
+              itemCount: bookingmores.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Column(
+                  children: <Widget>[
+                    InkWell(
+                      onTap: () {
+                        setState(() {
+                          print("Click tittle = ${bookingmores[index].name}");
+                        });
+                      },
+                      child: Container(
+                        height: 38.0,
+                        // color: Colors.red,
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Icon(
+                              bookingmores[index].icon,
+                              color: Colors.blue,
+                              size: 24.0,
+                            ),
+                            SizedBox(
+                              width: padding / 2,
+                            ),
+                            Text(
+                              bookingmores[index].name,
+                              style: TextStyle(
+                                color: Colors.white70,
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                            Spacer(),
+                            Icon(
+                              Icons.chevron_right,
+                              color: Colors.white24,
+                              size: 24.0,
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    Container(
+                      height: 1.0,
+                      color: Colors.white24,
+                    ),
+                    SizedBox(height: 2.0)
+                  ],
+                );
+              },
+            ),
+          )
+          // Container(
+          // ListView.builder(
+          //   itemCount: bookingmores.length,
+          //   itemBuilder: (BuildContext context, int index) {
+          //     return Container(
+          //       height: 50,
+          //       color: Colors.white,
+          //     );
+          //   },
+          // ),
+        ],
       ),
     );
   }
@@ -200,9 +305,198 @@ class _BookingAppState extends State<BookingApp> {
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
-          // Accinnidatuib && Car Rental
+          Container(
+            margin: EdgeInsets.only(
+                top: padding * 4, right: padding * 2, left: padding * 2),
+            // height: 64.0,
+            child: Column(
+              children: <Widget>[
+                Text(
+                  "Let's get started",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24.0,
+                      fontWeight: FontWeight.w600),
+                ),
+                SizedBox(height: padding / 2),
+                Text(
+                  "Sign in to see deals up to 50% easily mange your current bookings, and so much more...",
+                  style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w600),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: padding * 6),
+
+                //Sign in with Apple
+                InkWell(
+                  onTap: () {
+                    print("Sign in with Apple");
+                  },
+                  child: Container(
+                    margin: EdgeInsets.only(top: padding / 2),
+                    height: 40.0,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(radius / 2),
+                        color: Colors.white),
+                    child: Center(
+                      child: Text(
+                        "Sign in with Apple",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16.0),
+                      ),
+                    ),
+                  ),
+                ),
+
+                //Sign in with Google
+                InkWell(
+                  onTap: () {
+                    print("Sign in with Google");
+                  },
+                  child: Container(
+                    margin: EdgeInsets.only(top: padding / 2),
+                    height: 40.0,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(radius / 2),
+                        color: Colors.red),
+                    child: Center(
+                      child: Text(
+                        "Sign in with Google",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16.0),
+                      ),
+                    ),
+                  ),
+                ),
+
+                //Sign in with Apple
+                InkWell(
+                  onTap: () {
+                    print("Sign in with Apple");
+                  },
+                  child: Container(
+                    margin: EdgeInsets.only(top: padding / 2),
+                    height: 40.0,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(radius / 2),
+                        color: Colors.blue[800]),
+                    child: Center(
+                      child: Text(
+                        "Sign in with Facebook",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16.0),
+                      ),
+                    ),
+                  ),
+                ),
+
+                //Sign in with Email
+                InkWell(
+                  onTap: () {
+                    print("Sign in with Email");
+                  },
+                  child: Container(
+                    margin: EdgeInsets.only(top: padding / 2),
+                    height: 40.0,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(radius / 2),
+                        color: Colors.blue[400]),
+                    child: Center(
+                      child: Text(
+                        "Sign in with email",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16.0),
+                      ),
+                    ),
+                  ),
+                ),
+
+                Container(
+                  margin: EdgeInsets.only(top: padding / 2),
+                  height: 40.0,
+                  child: Center(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Container(
+                            margin: EdgeInsets.only(right: padding / 2),
+                            width: padding * 2,
+                            height: 1.0,
+                            color: textColorsGrey),
+                        Text(
+                          "Or",
+                          style: TextStyle(
+                              color: textColorsGrey,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 18.0),
+                        ),
+                        Container(
+                            margin: EdgeInsets.only(left: padding / 2),
+                            width: padding * 2,
+                            height: 1.0,
+                            color: textColorsGrey)
+                      ],
+                    ),
+                  ),
+                ),
+
+                //Create your account
+                InkWell(
+                  onTap: () {
+                    setState(() {
+                      print("Create your account");
+                    });
+                  },
+                  child: Container(
+                    margin: EdgeInsets.only(top: padding),
+                    height: 40.0,
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 1.0, color: Colors.white),
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Create your account",
+                        style: TextStyle(
+                            color: Colors.white70,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16.0),
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(
+                      top: padding / 2, right: padding / 4, left: padding / 4),
+                  child: Text(
+                    "By creating or loggin into an account you agreeing withour Terms and Conditions and Privacy Statement",
+                    style: TextStyle(
+                      fontSize: 14.0,
+                      color: Colors.white70,
+                    ),
+                    maxLines: 2,
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          // Container(
+          //   height: 64.0,
+          //   child: Placeholder(),
+          // ),
         ],
       ),
     );
@@ -254,29 +548,36 @@ class _BookingAppState extends State<BookingApp> {
                       fontWeight: FontWeight.w400),
                 ),
                 Spacer(),
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: padding),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(radius),
-                      color: Colors.black),
-                  width: 160.0,
-                  height: 50.0,
-                  child: Row(
-                    children: <Widget>[
-                      Icon(
-                        Icons.account_circle,
-                        color: Colors.white,
-                        size: 30.0,
-                      ),
-                      SizedBox(width: padding / 2),
-                      Text(
-                        "Add to Siri",
-                        style: TextStyle(
-                            color: textColorsGrey,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w400),
-                      )
-                    ],
+                InkWell(
+                  onTap: () {
+                    setState(() {
+                      print("Add to Siri");
+                    });
+                  },
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: padding),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(radius),
+                        color: Colors.black),
+                    width: 160.0,
+                    height: 50.0,
+                    child: Row(
+                      children: <Widget>[
+                        Icon(
+                          Icons.account_circle,
+                          color: Colors.white,
+                          size: 30.0,
+                        ),
+                        SizedBox(width: padding / 2),
+                        Text(
+                          "Add to Siri",
+                          style: TextStyle(
+                              color: textColorsGrey,
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.w400),
+                        )
+                      ],
+                    ),
                   ),
                 )
               ],
@@ -288,7 +589,7 @@ class _BookingAppState extends State<BookingApp> {
             margin: EdgeInsets.only(top: padding),
             padding:
                 EdgeInsets.only(top: padding, left: padding, right: padding),
-            height: _height,
+            height: _height * 2 / 3,
             width: _width,
             color: Colors.black,
             child: Column(
@@ -310,23 +611,28 @@ class _BookingAppState extends State<BookingApp> {
                       fontWeight: FontWeight.w400,
                       height: 1.4),
                 ),
-                Container(
-                  margin: EdgeInsets.only(top: padding),
-                  height: 40.0,
-                  decoration: BoxDecoration(
-                      border: Border.all(
-                        width: 1.0,
-                        color: Colors.blue,
-                      ),
-                      color: colorBackground),
-                  child: Center(
-                    child: Text(
-                      "Sign in",
-                      style: TextStyle(
+                InkWell(
+                  onTap: () {
+                    print("SignIn onClick");
+                  },
+                  child: Container(
+                    margin: EdgeInsets.only(top: padding),
+                    height: 40.0,
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                          width: 1.0,
                           color: Colors.blue,
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.w400,
-                          height: 1.4),
+                        ),
+                        color: colorBackground),
+                    child: Center(
+                      child: Text(
+                        "Sign in",
+                        style: TextStyle(
+                            color: Colors.blue,
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.w400,
+                            height: 1.4),
+                      ),
                     ),
                   ),
                 )
@@ -552,7 +858,9 @@ class _BookingAppState extends State<BookingApp> {
                   width: double.infinity,
                   height: 50.0,
                   child: RaisedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      print("Btn Search OnClick");
+                    },
                     color: Colors.blue,
                     child: Text(
                       "Search",
@@ -580,8 +888,8 @@ class _BookingAppState extends State<BookingApp> {
                       // materialTapTargetSie: MaterialTapTargetSize.padded,
                       onChanged: (bool x) {
                         setState(() {
-                          print(checkboxvalue);
                           checkboxvalue = !checkboxvalue;
+                          print("Checkbox travelling: ${checkboxvalue}");
                         });
                       },
                     ),
@@ -608,8 +916,8 @@ class _BookingAppState extends State<BookingApp> {
                 // materialTapTargetSie: MaterialTapTargetSize.padded,
                 onChanged: (bool x) {
                   setState(() {
-                    print(checkboxvalue2);
                     checkboxvalue2 = !checkboxvalue2;
+                    print("Checkbox Signin ${checkboxvalue2}");
                   });
                 },
               ),
@@ -635,7 +943,9 @@ class _BookingAppState extends State<BookingApp> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    print("Btn Not now OnClick");
+                  },
                   child: Container(
                     width: _width / 2,
                     // color: Colors.white,
@@ -652,7 +962,9 @@ class _BookingAppState extends State<BookingApp> {
                   color: dashColor,
                 ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    print("Btn SignIn OnClick");
+                  },
                   child: Container(
                     width: _width / 2,
                     // color: Colors.white,
@@ -1056,12 +1368,17 @@ class _BookingAppState extends State<BookingApp> {
                         ),
                       ),
                       SizedBox(height: padding / 2),
-                      Text(
-                        "List now",
-                        style: TextStyle(
-                            color: Colors.blue,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.w600),
+                      InkWell(
+                        onTap: () {
+                          print("Listnow onTap");
+                        },
+                        child: Text(
+                          "List now",
+                          style: TextStyle(
+                              color: Colors.blue,
+                              fontSize: 14.0,
+                              fontWeight: FontWeight.w600),
+                        ),
                       ),
                       SizedBox(height: 4.0),
                     ],
